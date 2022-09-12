@@ -1,11 +1,8 @@
 const mongoose=require('mongoose')
-const dbUrl=
-    process.env.NODE_ENV==='production'?
-    process.env.MONGO_URI:
-    'mongodb://127.0.0.1:27017/dividends_mongo'
+require('dotenv').config()
 
 mongoose
-    .connect(dbUrl)
+    .connect(process.env.MONGODB_URI)
     .then(()=>{console.log('Successful connection to MongoDB')})
     .catch((e)=>{console.error('Bad connection to MongoDB... Error:',e.message)})
 
