@@ -6,7 +6,7 @@ const allFunds=async (req,res)=>{
         res.status(200).json(funds)
     }catch(error){throw error}
 }
-const createFund=async (req,res)=>{
+const createFund=async (req, res)=>{
     try{
         const {name,icon,decription}=req.body
         const fund=await Fund.create({name,icon,decription}) 
