@@ -7,7 +7,7 @@ const Thread=new Schema(
         name:{type:String,default:'thread'},
         textBody:{type:String,default:''},
         symbol:{type:String,default:''},
-        tag:{type:String,default:''},
+        tag:{type:String,default:' '},
     },
     {timestamps:true}
 )
