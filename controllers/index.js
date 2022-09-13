@@ -3,7 +3,7 @@ const insight=require('./insight')
 const investor=require('./investor')
 const reaction=require('./reaction')
 const thread=require('./thread')
-const watchlist=require(' ./watchlist')
+const watchlist=require('./watchlist')
 
 module.exports={
     fund,
