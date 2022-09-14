@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(logger('dev'))
 
-const PORTMONGO=process.env.PORT||3001
+const PORTMONGO=3001
 const db=require('./db')
 const routes=require('./routes')
 

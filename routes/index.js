@@ -40,7 +40,7 @@ router.delete('/thread/delete/:id',stripToken,verifyToken,thread.deleteThread)
 router.get('/watchlist/all',watchlist.allWatchlists)
 router.post('/watchlist/create',stripToken,verifyToken,watchlist.createWatchlist)
 router.get('/watchlist/read/:id',watchlist.readWatchlist)
-router.put('/watchlist/update/:id',stripToken,verifyToken,watchlist.updateWatchlist)
+router.put('/watchlist/update/:id',watchlist.updateWatchlist)
 router.delete('/watchlist/delete/:id',stripToken,verifyToken,watchlist.deleteWatchlist)
 router.post('/watchlist/news',watchlist.getEquityNews)
 

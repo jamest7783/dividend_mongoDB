@@ -20,6 +20,7 @@ const createWatchlist=async (req,res)=>{
 const readWatchlist=async (req,res)=>{
     try{
         const {id}=req.params
+        const {tickers}=req.body
         const watchlist=await Watchlist.findById(id)
         !watchlist?
         res.status(200).json({alert:`Watchlist with ID: ${id} not found.`}):
@@ -29,7 +30,9 @@ const readWatchlist=async (req,res)=>{
 const updateWatchlist=async (req,res)=>{
     try{
         const {id}=req.params
-        const watchlist=await Watchlist.findByIdAndUpdate(id,req.body,{new:true})
+        const watchlist=await Watchlist.findById(id)
+        watchlist.symbols.push(req.body.ticker)
+        watchlist.save()
         !watchlist?
         res.status(200).json({alert:`Watchlist with ID: ${id} not found.`}):
         res.status(200).json(watchlist)
