@@ -4,7 +4,7 @@ const allFunds=async (req,res)=>{
     try{
         const funds=await Fund.find()
         res.status(200).json(funds)
-    }catch(error){throw error}
+    }catch(error){throw error }
 }
 const createFund=async (req, res)=>{
     try{
