@@ -6,7 +6,7 @@ const allInsights=async (req,res)=>{
         res.status(200).json(insights)
     }catch(error){throw error}
 }
-const createInsight=async (req,res)=>{
+const createInsight=async (req,res )=>{
     try{
         const {author,text,thread,reactions,voters,votes}=req.body
         const insight=await Insight.create({author,text,thread,reactions,voters,votes}) 
